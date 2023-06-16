@@ -1,0 +1,130 @@
+header{
+    position: relative;
+}
+
+main{
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: max-content max-content;
+    grid-template-columns:  max-content 1fr;
+    width: 100%;
+    gap: 10px;
+    column-gap: 50px;
+    line-height: 1.2;
+}
+.bottomLeftContainer{
+    grid-area: 2/1/3/2;
+}
+h1{
+    padding: 3px;
+    font-weight: bold;
+}
+
+form{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type='submit']{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.labelContainer{
+    grid-area: 1/2/3/3;
+}
+
+table, td, th, tr{ 
+    border-collapse: collapse;
+    border: 2px solid rgb(200,200,200);
+}
+
+table{
+    width: 100%;
+}
+
+
+td, th{
+    padding: 10px;
+}
+
+
+tr:nth-child(even) td {
+    background-color: rgb(230,230,230);
+}
+
+thead{
+    position: sticky;
+    top: 0px;
+}
+
+th {
+    background-color: rgb(220,220,220);
+    font-weight: bold;
+  }
+
+
+  .specialLabel{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 100%;
+    display: inline-block;
+    background-color: #65A30D;
+    margin-top: 10px;
+    position: relative;
+}
+
+.specialLabel:hover{
+    cursor: pointer
+    ;
+}
+.specialLabel::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    top: 5px;
+    height: 20px;
+    right: 20px;
+    background: url("chevron-down.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.hidden{
+    display: none;
+}
+
+
+
+#tableContainerRaw:checked ~ .tableContainerRawDrop{
+    max-height: 0;
+}
+
+#tableContainerProportion:checked ~ .tableContainerProportionDrop{
+    max-height: 0;
+}
+
+#tableContainerGap:checked ~ .tableContainerGapDrop{
+    max-height: 0;
+}
+
+
+#tableContainerRaw:checked + .rotateArrowRaw::after{
+    transform: rotate(180deg);
+}
+
+#tableContainerProportion:checked + .rotateArrowProportion::after{
+    transform: rotate(180deg);
+}
+
+#tableContainerGap:checked + .rotateArrowGap::after{
+    transform: rotate(180deg);
+}
+
+.tableContainer{
+    max-height: 500px;
+    overflow:auto;
+}
